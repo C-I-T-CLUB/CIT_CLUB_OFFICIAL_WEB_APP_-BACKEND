@@ -2,7 +2,9 @@
  * application Dependencies
  */
 const express = require ( 'express');
-const path = require ( 'path');
+const compression = require ('compression');
+const helmet = require ( 'helmet');
+const cors = require ( 'cors');
 
 
 /**
@@ -10,8 +12,7 @@ const path = require ( 'path');
  */
 const apiRoutes = require ( './routes/index');
 const config = require ( './config/index');
-const databse = require ( './database/index');
-
+const dbconnection = require ( './helpers/dbconnection');
 /**
  * Application instance
  */
@@ -23,14 +24,16 @@ const app = express();
  */
 app.use ( express.json ());
 app.use ( express.urlencoded ( {extended: true} ));
-app.use ( express.static ( path.join (__dirname, 'public') ));
+app.use ( helmet ());
+app.use ( compression ())
+app.use ( cors ())
 
 
 
 /**
  * Application middlewares
  */
-app.use ('/', apiRoutes)
+app.use ('/api', apiRoutes)
 
 
 

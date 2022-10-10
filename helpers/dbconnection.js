@@ -24,6 +24,24 @@
      console.log ( err.message );
  });
  
+ mongoose.connection.on ( 'connected', () => {
+        console.log ( 'Mongoose connected to the database');
+ });
+
+ mongoose.connection.on ( 'error', (err) => {
+        console.log ( err.message );
+ });
+
+ mongoose.connection.on ( 'disconnected', () => {
+        console.log ( 'Mongoose disconnected from the database');
+ } );
+
+ process.on ( 'SIGINT', () => {
+        mongoose.connection.close ( () => {
+            console.log ( 'Mongoose disconnected from the database due to application termination');
+            process.exit (0);
+        }); 
+ } );
  /**
   * Exporting database connection
   */
