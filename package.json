@@ -6,13 +6,19 @@
   "scripts": {
     "run-dev": " nodemon app.js",
     "start": "node app.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": " jest "
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/C-I-T-CLUB/CIT_CLUB_OFFICIAL_WEB_APP.git"
   },
-  "keywords": ["API", "CIT", "CIT CLUB", "CIT CLUB API", "CIT CLUB WEB APP"],
+  "keywords": [
+    "API",
+    "CIT",
+    "CIT CLUB",
+    "CIT CLUB API",
+    "CIT CLUB WEB APP"
+  ],
   "author": "",
   "license": "ISC",
   "bugs": {
@@ -27,7 +33,11 @@
     "helmet": "^6.0.0",
     "jsonwebtoken": "^8.5.1",
     "mongoose": "^6.6.3",
+    "multer": "^1.4.5-lts.1",
     "node-fetch": "^3.2.10",
     "validator": "^13.7.0"
+  },
+  "devDependencies": {
+    "jest": "^29.1.2"
   }
 }
