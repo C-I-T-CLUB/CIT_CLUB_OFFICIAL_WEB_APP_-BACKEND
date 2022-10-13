@@ -13,7 +13,7 @@ This is served to the web application via an API from popular job advertisement 
 Users may choose to use this web application as guest users or create account. When a user creates an account, They  have a dashboard that show a summary of their previous visits and The dashboard have a **Favourite**** button that enable users to see their bookmarks and can choose to add more bookmarks. This is user experience is achieved using cookies.
 ##### Login
 When the user enter valid details in the login page, they are redirected to user toilered dashboard
-##### Sign up
+##### Sign up -citclub account
 
 
 # NOTE!
