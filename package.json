@@ -1,5 +1,5 @@
 {
-  "name": "THE CIT CLUB APP API",
+  "name": "THE-CIT-CLUB-APP-API",
   "version": "1.0.0",
   "description": "In the resources feature, There are several resources including past papers for all the courses offered by the University. \r ##### 1.1 PastPaper resource\r The past papers are sorted Using year of study and courses. The past papers are pdf links than onclick should open on a blank tab.\r ##### 1.2 CIT club projects\r This page  display all the CIT projects and links to the live projects. There projects should have brief description and may may also have url to source code.\r #### 2. Tech job adverts\r This is served to the web application via an API from popular job advertisement web applications like Glassdoor, LinkedIn, BrighterMonday, Indeed etc.\r #### 3. Sign up/ Login\r Users may choose to use this web application as guest users or create account. When a user creates an account, They  have a dashboard that show a summary of their previous visits and The dashboard have a **Favourite**** button that enable users to see their bookmarks and can choose to add more bookmarks. This is user experience is achieved using cookies.\r ##### Login\r When the user enter valid details in the login page, they are redirected to user toilered dashboard\r ##### Sign up",
   "main": "app.js",
