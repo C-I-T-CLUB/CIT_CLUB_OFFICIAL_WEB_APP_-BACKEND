@@ -32,7 +32,13 @@ const SignUpSchema = new Schema ( {
         type: String,
         required: true,
         trim: true,
+        min: 8,
+        max: 2024
     },
+    date: {
+        type: Date,
+        default: Date.now
+    }
 })
 
 /**

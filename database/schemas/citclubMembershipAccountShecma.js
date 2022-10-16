@@ -66,7 +66,7 @@ const CitClubMember = new Schema ( {
         required: true,
         trim: true,
         min: 8,
-        max: 20,
+        max: 2024,
     },
     additionalInfo: {
         type: String,
@@ -75,6 +75,10 @@ const CitClubMember = new Schema ( {
         min: null,
         max: 300
     },
+    date: {
+        type: Date,
+        default: Date.now
+    }
 });
 
 //Exporting CIT CLUB MEMBER SCHEMA
