@@ -25,6 +25,8 @@ const SignUpSchema = new Schema ( {
         unique: [true, "This username is already taken"],
         required: true,
         trim: true,
+        min: 4,
+        max: 10,
     },
     password: {
         type: String,
