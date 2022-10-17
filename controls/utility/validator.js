@@ -31,6 +31,23 @@ const validate = (req, res, next) => {
             trim: [validator.trim ()],
             escape: [validator.escape ()],
         },
+        [req.body.rating]: {
+            trim: [validator.trim ()],
+            escape: [validator.escape ()],
+        },
+        [req.body.designRating]: {
+            trim: [validator.trim ()],
+            escape: [validator.escape ()],
+        },
+        [req.body.interest]: {
+            trim: [validator.trim ()],
+            escape: [validator.escape ()],
+        },
+        [req.body.password]: {
+            trim: [validator.trim ()],
+            escape: [validator.escape ()],
+            strongpassword: [validator.isStrongPassword ()],
+        }
     }
 };
 //Export validation function
