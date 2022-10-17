@@ -35,8 +35,8 @@ const joinCitClub = (req, res) => {
         let passwordHash = hashsalt;
 
         let newMember = new Member ( {
-            email: email,
-            name: name,
+            email: email.toLowerCase (),
+            name: name.toLowerCase (),
             phonenumber: phonenumber,
             course: course,
             programingRating: rating,

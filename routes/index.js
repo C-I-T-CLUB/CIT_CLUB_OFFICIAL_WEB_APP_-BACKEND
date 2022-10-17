@@ -15,7 +15,7 @@ const {signup, login, join_citclub, validator} = require ( './auth/auth');
  */
 Router.post ( '/auth/signup', signup );
 Router.post ( '/auth/login', login );
-Router.post ( '/auth/member', validator, join_citclub);
+Router.post ( '/auth/member', join_citclub);
 /**
  * Export routes
  */
