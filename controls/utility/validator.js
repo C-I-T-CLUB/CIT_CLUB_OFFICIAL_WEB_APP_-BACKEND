@@ -61,7 +61,11 @@ const validate = (req, res, next) => {
              * pointsForContainingSymbol: 10 }
              */
             strongpassword: [validator.isStrongPassword ()],
-        }
+        },
+        [req.body.other]: {
+            trim: [validator.trim ()],
+            escape: [validator.escape ()],
+        },
     }
 };
 //Export validation function
