@@ -10,7 +10,7 @@ const { CitclubMember: Member } = require ( '../../database/index');
 
 // Join CIT CLUB FUNCTION
 const joinCitClub = (req, res) => {
-    console.log (validationResult (req))
+    //console.log (validationResult (req).error.msg)
     //Validation user input
     const {email,
            fname,
