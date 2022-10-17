@@ -5,7 +5,7 @@ const bcrypt = require ( 'bcrypt' );
 /**
  * Module internal dependencies
  */
-const { CitclubMember, CitclubAccount} = require ( '../database/index');
+const { CitclubMember, CitclubAccount} = require ( '../../database/index');
 /**
  * Login middleware
  */

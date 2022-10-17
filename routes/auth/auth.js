@@ -5,9 +5,9 @@
 /**
  * Interal dependencies
  */
-const signup = require ( '../../controllers/sign_up');
-const login = require ( '../../controllers/login');
-const joincitclub = require ( '../../controllers/join_citclub');
+const signup = require ( '../../controls/auth_controls/sign_up');
+const login = require ( '../../controls/auth_controls/login');
+const joincitclub = require ( '../../controls/auth_controls/join_citclub');
 
 // Path: routes\auth.js
 const auth = {

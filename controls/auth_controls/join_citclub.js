@@ -2,11 +2,11 @@
  * Application module dependencies
  */
 const bcrypt = require ( 'bcrypt');
-const Joi = require ( 'joi');
+const validator = require ('validator');
 /**
  * Module internal dependencies
  */
-const { CitclubMember: Member } = require ( '../database/index');
+const { CitclubMember: Member } = require ( '../../database/index');
 
 // Join CIT CLUB FUNCTION
 const joinCitClub = (req, res) => {

@@ -6,7 +6,7 @@ const bcrypt = require ( 'bcrypt' );
 /**
  * Applicatio module internal dependencies
  */
-const { CitclubAccount: NewAccount}  = require ( '../database/index');
+const { CitclubAccount: NewAccount}  = require ( '../../database/index');
 /**
  * Signup middleware
  */
