@@ -1,7 +1,7 @@
 /**
  * Application module dependencies
  */
-const mongoose = require ('monggose');
+const mongoose = require ('mongoose');
 const {isEmail} = require ('validator');
 
 /**
@@ -22,21 +22,21 @@ const CitClubMember = new Schema ( {
         type: String,
         required: true,
         trim: true,
-        min: 8,
-        max: 30,
+        minLength: 6,
+        maxLength: 30,
     },
     phonenumber: {
         type: String,
         required: true,
         trim: true,
-        min: 10,
-        max: 12,
+        minLength: 10,
+        maxLength: 12,
         unique: true,
     },
     course: {
         type: String,
-        min: 2,
-        max: 6,
+        minLength: 2,
+        maxLength: 6,
         required: true,
         trim: true,
     },
@@ -44,14 +44,14 @@ const CitClubMember = new Schema ( {
         type: Number,
         required: true,
         min: 1,
-        max: 2,
+        max: 10,
         trim: true
     },
     designRating: {
         type: Number,
         required: true,
         min: 1,
-        max: 2,
+        max: 10,
         trim: true
     },
     fieldOfInterest : {
@@ -65,15 +65,15 @@ const CitClubMember = new Schema ( {
         type: String,
         required: true,
         trim: true,
-        min: 8,
-        max: 2024,
+        minLength: 8,
+        maxLength: 2024,
     },
     additionalInfo: {
         type: String,
         required: false,
         trim: true,
-        min: null,
-        max: 300
+        minLength: null,
+        maxLength: 300
     },
     date: {
         type: Date,

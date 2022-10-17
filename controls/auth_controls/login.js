@@ -5,14 +5,14 @@ const bcrypt = require ( 'bcrypt' );
 /**
  * Module internal dependencies
  */
-const CitClubAccount = require ( '../database/models/signUpModel');
+const { CitclubMember, CitclubAccount} = require ( '../../database/index');
 /**
  * Login middleware
  */
 const login = (req, res, next) => {
     const {email, username, password} = req.body;
     if (email) {
-        CitClubAccount.findOne({ email: email })
+        CitclubAccount.findOne({ email: email })
         .then ( (user) => {
             bcrypt.compare (password, user.password)
             .then ( (result) => {
@@ -22,7 +22,8 @@ const login = (req, res, next) => {
                     .json ({
                         id: user._id,
                         email: user.email,
-                        username: user.username
+                        username: user.username,
+                        date_joined: user.date
                     });
                 }else {
                     res
@@ -50,7 +51,7 @@ const login = (req, res, next) => {
             });
         } );
     }else {
-        CitClubAccount.findOne({ username: username })
+        CitclubAccount.findOne({ username: username })
         .then ( (user) => {
             bcrypt.compare (password, user.password)
             .then ( (result) => {
@@ -60,7 +61,8 @@ const login = (req, res, next) => {
                     .json ({
                         id: user._id,
                         email: user.email,
-                        username: user.username
+                        username: user.username,
+                        date_joined: user.date
                     });
                 }else {
                     res

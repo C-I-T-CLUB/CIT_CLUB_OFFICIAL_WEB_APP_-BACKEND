@@ -7,18 +7,15 @@ const Router = express.Router();
 /**
  * Internal module dependencies
  */
-const signUpPage = require ( '../controllers/sign_up');
-const loginPage = require ( '../controllers/login');
+const {signup, login, join_citclub} = require ( './auth/auth');
 
 
 /**
  * Routes 
  */
-Router.post ( '/signup', signUpPage);
-Router.post ( '/login', loginPage);
-
-
-
+Router.post ( '/auth/signup', signup );
+Router.post ( '/auth/login', login );
+Router.post ( '/auth/member', join_citclub);
 /**
  * Export routes
  */

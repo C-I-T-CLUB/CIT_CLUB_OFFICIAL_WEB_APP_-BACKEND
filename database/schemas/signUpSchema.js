@@ -25,15 +25,15 @@ const SignUpSchema = new Schema ( {
         unique: [true, "This username is already taken"],
         required: true,
         trim: true,
-        min: 4,
-        max: 10,
+        minLength: 4,
+        maxLenght: 10,
     },
     password: {
         type: String,
         required: true,
         trim: true,
-        min: 8,
-        max: 2024
+        minLength: 8,
+        maxLenght: 2024
     },
     date: {
         type: Date,
