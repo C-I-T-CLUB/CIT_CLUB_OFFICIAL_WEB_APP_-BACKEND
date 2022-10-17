@@ -10,42 +10,33 @@ const validator = require ( 'validator' );
 const validate = (req, res, next) => {
     const schema = {
         [req.body.email]: {
-            validate: [validator.isEmail (), "This is not a valid email address"],
-            trim: [validator.trim ()],
-            escape: [validator.escape ()],
+            validate: [validator.isEmail (req.body.email), "This is not a valid email address"],
+            escape: [validator.escape (req.body.email)],
         },
         [req.body.fname]: {
-            trim: [validator.trim ()],
-            escape: [validator.escape ()],
+            escape: [validator.escape (req.body.fname)],
         },
         [req.body.lname]: {
-            trim: [validator.trim ()],
-            escape: [validator.escape ()],
+            escape: [validator.escape (req.body.lname)],
         },
         [req.body.phone]: {
-            trim: [validator.trim ()],
-            escape: [validator.escape ()],
-            mobilenumber: [validator.isMobilePhone (), "Please enter avalid phonenumber"]
+            escape: [validator.escape (req.body.phone)],
+            mobilenumber: [validator.isMobilePhone (req.body.phone, 'any'), "Please enter avalid phonenumber"]
         },
         [req.body.course]: {
-            trim: [validator.trim ()],
-            escape: [validator.escape ()],
+            escape: [validator.escape (req.body.course)],
         },
         [req.body.rating]: {
-            trim: [validator.trim ()],
-            escape: [validator.escape ()],
+            escape: [validator.escape (req.body.rating)],
         },
         [req.body.designRating]: {
-            trim: [validator.trim ()],
-            escape: [validator.escape ()],
+            escape: [validator.escape (req.body.designRating)],
         },
         [req.body.interest]: {
-            trim: [validator.trim ()],
-            escape: [validator.escape ()],
+            escape: [validator.escape (req.body.interest)],
         },
         [req.body.password]: {
-            trim: [validator.trim ()],
-            escape: [validator.escape ()],
+            escape: [validator.escape (req.body.password)],
             /**
              * const strongPassword = { minLength: 8, 
              * minLowercase: 1, 
@@ -60,13 +51,18 @@ const validate = (req, res, next) => {
              * pointsForContainingNumber: 10, 
              * pointsForContainingSymbol: 10 }
              */
-            strongpassword: [validator.isStrongPassword ()],
+            strongpassword: [validator.isStrongPassword (req.body.password)],
         },
         [req.body.other]: {
-            trim: [validator.trim ()],
-            escape: [validator.escape ()],
+            escape: [validator.escape (req.body.other)],
         },
     }
+    res
+    .status (500)
+    .json ({
+        error: schema
+    });
+    next ();
 };
 //Export validation function
 module.exports = validate;
