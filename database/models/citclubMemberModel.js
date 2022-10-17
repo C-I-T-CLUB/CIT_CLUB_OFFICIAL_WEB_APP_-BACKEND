@@ -6,7 +6,7 @@ const mongoose = require ( 'mongoose');
 /**
  * Module internal dependencies
  */
-const CitclubMember = require ( '../schemas/citclubMembershipAccountSchema'); 
+const CitclubMember = require ('../schemas/citclubMembershipSchema'); 
 
 /**
  * CIT CLUB MEMBER MODEL
