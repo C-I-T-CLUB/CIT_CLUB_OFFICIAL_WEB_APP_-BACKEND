@@ -11,18 +11,6 @@ const { CitclubMember: Member } = require ( '../database/index');
 // Join CIT CLUB FUNCTION
 const joinCitClub = (req, res) => {
     //Validation user input
-    const userInput = Joi.object ( {
-        email: Joi.string ().required ().email (),
-        fname: Joi.string ().min (3).required (),
-        lname: Joi.string ().min (3).required (),
-        phone: Joi.string ().min (10).required (),
-        course: Joi.string ().max (6).required (),
-        rating: Joi.number ().required (),
-        designRating: Joi.number ().required (),
-        interest: Joi.string ().required (),
-        password: Joi.string ().required (),
-        other: Joi.string ()
-    })
     const {email,
            fname,
            lname,
