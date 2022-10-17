@@ -2,6 +2,7 @@
  * Application module dependencies
  */
 const bcrypt = require ( 'bcrypt');
+const Joi = require ( 'joi');
 /**
  * Module internal dependencies
  */
@@ -26,6 +27,10 @@ const joinCitClub = (req, res) => {
     phone.length === 12 ?
     phonenumber = phone : 
     phonenumber = `254${phone.slice (1, phone.length)}`
+    //Validation user input
+    const userInput = Joi.object ( {
+        email
+    })
     // Hashing password
     bcrypt.hash ( password, 12)
     .then ( (hashsalt) => {
