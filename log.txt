@@ -1,0 +1,224 @@
+commit 423dc37f5013e7f6e034d5b78ad7e04f060136ad
+Author: paullaster <paullasterokoth98@gmail.com>
+Date:   Mon Oct 17 14:03:32 2022 +0300
+
+    files <<>>
+
+commit 343cf8c7b9cd1ee4a46a2bf64715537a3c1b6467
+Author: paullaster <paullasterokoth98@gmail.com>
+Date:   Mon Oct 17 13:43:11 2022 +0300
+
+    grouping auth controls
+
+commit 2360e543ca38c4ec8d165b33471369a6f82426e2
+Author: paullaster <paullasterokoth98@gmail.com>
+Date:   Mon Oct 17 13:00:38 2022 +0300
+
+    recall joi
+
+commit ea9a482b043af1753476e177f61087d9f1713e1d
+Merge: 3093483 0beb9bf
+Author: Paullaster Okoth <43445963+paullaster@users.noreply.github.com>
+Date:   Mon Oct 17 12:47:17 2022 +0300
+
+    Merge pull request #25 from C-I-T-CLUB/master
+    
+    Merge pull request #24 from C-I-T-CLUB/hauweengs-working-branch
+
+commit 30934836d16600b6d0a361579946bbd0bb013bf6
+Author: paullaster <paullasterokoth98@gmail.com>
+Date:   Mon Oct 17 07:12:06 2022 +0300
+
+    Joi validation
+
+commit e3ce151f17fd8c8bd36e7fe3d698a206e5284e7e
+Author: paullaster <paullasterokoth98@gmail.com>
+Date:   Mon Oct 17 06:46:14 2022 +0300
+
+    add server validation
+
+commit ec3adb58c70b1a07bcd180a805d84e519e5264ad
+Author: paullaster <paullasterokoth98@gmail.com>
+Date:   Mon Oct 17 06:13:28 2022 +0300
+
+    debugg join func error
+
+commit 9e7178185a93bfd4f2bbfa93fa63de830d244dfd
+Author: paullaster <paullasterokoth98@gmail.com>
+Date:   Mon Oct 17 00:38:29 2022 +0300
+
+    join cit club
+
+commit 3509fce6d9b2b779b5542efe7fedd51b199413ab
+Author: paullaster <paullasterokoth98@gmail.com>
+Date:   Sun Oct 16 19:22:19 2022 +0300
+
+    error debug
+
+commit 5dfe6d349d52611049698a21bc0dbb041ab23e0f
+Author: paullaster <paullasterokoth98@gmail.com>
+Date:   Sun Oct 16 18:51:23 2022 +0300
+
+    auth route
+
+commit 0beb9bf197821bfd7aba4c2f691fc2acb697dfb0
+Merge: 1b1c26a 13c2c6a
+Author: Paullaster Okoth <43445963+paullaster@users.noreply.github.com>
+Date:   Sun Oct 16 18:29:25 2022 +0300
+
+    Merge pull request #24 from C-I-T-CLUB/hauweengs-working-branch
+    
+    Hauweengs working branch
+
+commit 13c2c6a027a7b42ed2bcbfe9b86cce376866e2c3
+Author: paullaster <paullasterokoth98@gmail.com>
+Date:   Sun Oct 16 18:27:24 2022 +0300
+
+    pjson
+
+commit dc5c0e09d2b22f18fc7fa99c7e74db7a02ed8ec0
+Merge: b7099be 1b1c26a
+Author: Paullaster Okoth <43445963+paullaster@users.noreply.github.com>
+Date:   Sun Oct 16 18:07:14 2022 +0300
+
+    Merge pull request #22 from C-I-T-CLUB/master
+    
+    master update
+
+commit 1b1c26aa6e93ac8716cf82b13cb8ce5fb289c01a
+Merge: c501a06 b7099be
+Author: Paullaster Okoth <43445963+paullaster@users.noreply.github.com>
+Date:   Sun Oct 16 18:05:12 2022 +0300
+
+    Merge pull request #21 from C-I-T-CLUB/hauweengs-working-branch
+    
+    citclub members schema
+
+commit b7099be117954fd5412210a83e6b70b5b7994f0c
+Author: paullaster <paullasterokoth98@gmail.com>
+Date:   Sun Oct 16 18:03:33 2022 +0300
+
+    citclub members schema
+
+commit c501a0654d0ce4dd2b36448e1de01a6a45e82e60
+Merge: fd6289a 4cd6bc6
+Author: Paullaster Okoth <43445963+paullaster@users.noreply.github.com>
+Date:   Sun Oct 16 17:47:24 2022 +0300
+
+    Merge pull request #20 from C-I-T-CLUB/hauweengs-working-branch
+    
+    CIT CLUB members schema  and model
+
+commit 4cd6bc6c7fee5e547754433634095a1fed3df69a
+Author: paullaster <paullasterokoth98@gmail.com>
+Date:   Sun Oct 16 17:43:17 2022 +0300
+
+    join club
+
+commit 0959d19d728885d04053c5d687e1937e8da81529
+Author: paullaster <paullasterokoth98@gmail.com>
+Date:   Sun Oct 16 17:30:36 2022 +0300
+
+    citclub members collection
+
+commit 37eb855b8da52db204f9c100bee1c2a5ff49adca
+Author: paullaster <paullasterokoth98@gmail.com>
+Date:   Sun Oct 16 16:28:33 2022 +0300
+
+    CitClubMember schema
+
+commit baa0b4528bf00d28bf967b26e3fa678e03e46892
+Author: paullaster <paullasterokoth98@gmail.com>
+Date:   Sun Oct 16 13:11:36 2022 +0300
+
+    auth files
+
+commit fd6289a0eb5d937d72436cea463a1375918e6fd0
+Author: Morph <root@MetaHuman>
+Date:   Thu Oct 13 05:44:34 2022 -0700
+
+    illegal characters in package.json fixed.
+
+commit af6e7328edf8a02e99f7e7d86a793dffe01a298b
+Merge: d5f0894 88351d4
+Author: Paullaster Okoth <43445963+paullaster@users.noreply.github.com>
+Date:   Thu Oct 13 08:00:58 2022 +0300
+
+    Merge pull request #16 from C-I-T-CLUB/paullaster-working-branch
+    
+    Update README.md
+
+commit 88351d487b502e16d62c38142c05bfb8aad8349d
+Author: Paullaster Okoth <43445963+paullaster@users.noreply.github.com>
+Date:   Thu Oct 13 07:53:10 2022 +0300
+
+    Update README.md
+    
+    citclub account
+    
+    Signed-off-by: Paullaster Okoth <43445963+paullaster@users.noreply.github.com>
+
+commit d5f089478ce897f555046c7efc2d66e9ddf74b89
+Author: paullaster <paullasterokoth98@gmail.com>
+Date:   Tue Oct 11 15:56:51 2022 +0300
+
+    adding test
+
+commit 57e8cab581e0e946d8ead7476e07dbff967af519
+Author: paullaster <paullasterokoth98@gmail.com>
+Date:   Tue Oct 11 01:46:37 2022 +0300
+
+    dbconnection
+
+commit e89fab96b877a30f17ce1601716d672ceb6e5d62
+Merge: 2e18844 acf9f16
+Author: paullaster <paullasterokoth98@gmail.com>
+Date:   Tue Oct 11 01:13:00 2022 +0300
+
+    Merge branch 'master' of https://github.com/C-I-T-CLUB/CIT_CLUB_OFFICIAL_WEB_APP_-BACKEND
+
+commit 2e1884469b8bb07560e7f506860bf68b8915ce34
+Author: paullaster <paullasterokoth98@gmail.com>
+Date:   Tue Oct 11 01:09:40 2022 +0300
+
+    db connection helper file
+
+commit acf9f16f69cc347615de466d7c1133dc3f3088a0
+Merge: b5d09fb fa28a51
+Author: Paullaster Okoth <43445963+paullaster@users.noreply.github.com>
+Date:   Sun Oct 9 07:09:36 2022 +0300
+
+    Merge pull request #3 from C-I-T-CLUB/add-code-of-conduct-1
+    
+    Create CODE_OF_CONDUCT.md
+
+commit fa28a514df05b555190076a907d8a8d0831afe4a
+Author: Paullaster Okoth <43445963+paullaster@users.noreply.github.com>
+Date:   Sun Oct 9 07:09:14 2022 +0300
+
+    Create CODE_OF_CONDUCT.md
+    
+    Signed-off-by: Paullaster Okoth <43445963+paullaster@users.noreply.github.com>
+
+commit b5d09fb4716938482855d3fc9ade20bf063ab9c6
+Merge: 1c3c580 82b48ec
+Author: Paullaster Okoth <43445963+paullaster@users.noreply.github.com>
+Date:   Sun Oct 9 07:04:51 2022 +0300
+
+    Merge pull request #2 from C-I-T-CLUB/add-license-1
+    
+    Create LICENSE
+
+commit 82b48ec5eb8c7da1777c492f117279b8d0e6dbaf
+Author: Paullaster Okoth <43445963+paullaster@users.noreply.github.com>
+Date:   Sun Oct 9 07:04:12 2022 +0300
+
+    Create LICENSE
+    
+    Signed-off-by: Paullaster Okoth <43445963+paullaster@users.noreply.github.com>
+
+commit 1c3c5809080e88054ab1bcf45ff105274d0df6f1
+Author: paullaster <paullasterokoth98@gmail.com>
+Date:   Thu Oct 6 07:45:11 2022 +0300
+
+    push initial server file
