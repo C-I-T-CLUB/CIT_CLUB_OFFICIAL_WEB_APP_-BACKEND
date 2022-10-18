@@ -12,6 +12,7 @@ const config = require ( '../../config/index');
 const verify = (req, res, next) => {
     const token = req.header ('auth-token');
     console.log ( token );
+    next (token);
 };
 
 //Export verify function
