@@ -9,7 +9,7 @@ const { FieldOfInterest } = require ( '../../database/index');
 
 //Field of interest module:
 const fieldsOfInterest = (req, res, next ) => {
-    FieldOfInterest.findOne ( {})
+    FieldOfInterest.find ( {})
     .then ( (specializations) => {
         res
         .status (200)
