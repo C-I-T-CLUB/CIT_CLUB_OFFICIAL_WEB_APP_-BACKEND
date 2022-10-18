@@ -27,6 +27,27 @@ const dashboard = (req, res ) => {
             designRating: member.designRating,
             fieldOfInterest: member.fieldOfInterest,
         });
+    })
+    .catch ( (err) => {
+        CitclubAccount.findOne ( {
+            _id: userDetails.id,
+        })
+        .then ( (user) => {
+            res
+            .status (200)
+            .json ( { 
+                email: user.email,
+                username: user.username,
+            } );
+        })
+        .catch ( (err) => {
+            err.message = "Error: Having trouble getting this page, Please try again later.";
+            res
+            .status (404)
+            .json ( {
+                error: err.message,
+            });
+        } );
     });
 };
 
