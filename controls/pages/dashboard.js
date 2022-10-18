@@ -20,6 +20,8 @@ const dashboard = (req, res ) => {
         .status (200)
         .json ( {
             email: member.email,
+            name: member.name,
+            course: member.course,
             phonenumber: member.phonenumber,
             programingRating: member.programingRating,
             designRating: member.designRating,
