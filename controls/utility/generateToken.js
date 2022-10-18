@@ -8,6 +8,8 @@ const JWT = require ( 'jsonwebtoken');
  * @param {*} user 
  */
 const config = require ( '../../config/index');
+
+//token generator function:
 const tokenGenerator = (user) => {
     const newToken = JWT.sign ( {
         id: user._id,
