@@ -12,7 +12,6 @@ const token = require ( '../utility/generateToken');
  */
 const login = (req, res, next) => {
     const {email, password} = req.body;
-    try {
         CitclubAccount.findOne({ email: email })
         .then ( (user) => {
             bcrypt.compare (password, user.password)
@@ -89,16 +88,7 @@ const login = (req, res, next) => {
                          });
                      })
                      .catch ( (err) => {
-                         err.message = `Email or username ${email} not found`;
-                         res
-                         .status (500)
-                         .json ( {
-                             error: err.message
-                         });
-                     } );
-        } );
-    } catch (error) {
-        CitclubMember.findOne ( { email: email } )
+                        CitclubMember.findOne ( { email: email } )
         .then ( (user) => {
             bcrypt.compare (password, user.password)
             .then ( (result) => {
@@ -136,15 +126,15 @@ const login = (req, res, next) => {
             });
         })
         .catch ( (err) => {
-            err.message = `User with this '${email}' was not found`;
+            err.message = `User with this email or username: '${email}' was not found`;
             res
             .status (500)
             .json ({
                 error: err.message
             });
         });
-
-    }
+                     } );
+        } );
 };
 
 /**
