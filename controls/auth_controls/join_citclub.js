@@ -2,7 +2,7 @@
  * Application module dependencies
  */
 const bcrypt = require ( 'bcrypt');
-const validator = require ('validator');
+const {validationResult} = require ('express-validator');
 /**
  * Module internal dependencies
  */
@@ -10,6 +10,7 @@ const { CitclubMember: Member } = require ( '../../database/index');
 
 // Join CIT CLUB FUNCTION
 const joinCitClub = (req, res) => {
+    //console.log (validationResult (req).error.msg)
     //Validation user input
     const {email,
            fname,
@@ -34,8 +35,8 @@ const joinCitClub = (req, res) => {
         let passwordHash = hashsalt;
 
         let newMember = new Member ( {
-            email: email,
-            name: name,
+            email: email.toLowerCase (),
+            name: name.toLowerCase (),
             phonenumber: phonenumber,
             course: course,
             programingRating: rating,

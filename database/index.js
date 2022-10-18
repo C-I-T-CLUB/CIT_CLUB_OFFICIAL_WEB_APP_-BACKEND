@@ -1,7 +1,7 @@
 /**
  * importing dependencies
  */
-const CitclubMember = require ('./models/citclubMemberModel');
+const {CitclubMemberModel: CitclubMember, FieldOfInterestModel: FieldOfInterest} = require ('./models/citclubMemberModel');
 const CitclubAccount = require ('./models/signUpModel');
 
 /**
@@ -9,5 +9,6 @@ const CitclubAccount = require ('./models/signUpModel');
  */
 module.exports = {
     CitclubMember,
+    FieldOfInterest,
     CitclubAccount,
 };

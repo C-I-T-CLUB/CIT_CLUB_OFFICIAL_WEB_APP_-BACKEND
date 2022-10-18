@@ -10,6 +10,7 @@ const {isEmail} = require ('validator');
 
 // cit club membership account schema
 const Schema = mongoose.Schema;
+const FieldOfInterest = new Schema ( {name: String});
 const CitClubMember = new Schema ( {
     email: {
         type: String,
@@ -55,7 +56,8 @@ const CitClubMember = new Schema ( {
         trim: true
     },
     fieldOfInterest : {
-        type: String,
+        type: [String],
+        default: undefined,
         required: true,
         trim: true,
         min: null,
@@ -82,4 +84,4 @@ const CitClubMember = new Schema ( {
 });
 
 //Exporting CIT CLUB MEMBER SCHEMA
-module.exports = CitClubMember;
+module.exports = {CitClubMember, FieldOfInterest};

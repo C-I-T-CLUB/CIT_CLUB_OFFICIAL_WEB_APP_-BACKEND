@@ -6,16 +6,17 @@ const mongoose = require ( 'mongoose');
 /**
  * Module internal dependencies
  */
-const CitclubMember = require ('../schemas/citclubMembershipSchema'); 
+const {CitClubMember, FieldOfInterest} = require ('../schemas/citclubMembershipSchema'); 
 
 /**
  * CIT CLUB MEMBER MODEL
- * collection {table} name: citclub members
+ * FELD OF INTEREST MODEL
+ * collection {table} name: citclub members, fields of interest,
  */
-const CitclubMemberModel = mongoose.model ( 'citclub members', CitclubMember);
-
+const CitclubMemberModel = mongoose.model ( 'citclub members', CitClubMember);
+const FieldOfInterestModel = mongoose.model ( 'fieldsOfInterest', FieldOfInterest);
 /**
- * Exporting CIT CLUB MEMBER MODEL
- * with citclub members collection
+ * Exporting CIT CLUB MEMBER MODEL and FELD OF INTEREST MODEL
+ * with citclub members collection fields of interest collection
  */
-module.exports = CitclubMemberModel; 
+module.exports = {CitclubMemberModel, FieldOfInterestModel}; 
