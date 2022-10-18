@@ -2,11 +2,12 @@
  * Application module dependencies
  */
 const bcrypt = require ( 'bcrypt' );
-const jwt = require ( 'jsonwebtoken');
+const JWT = require ( 'jsonwebtoken');
 /**
  * Module internal dependencies
  */
 const { CitclubMember, CitclubAccount} = require ( '../../database/index');
+const config = require ( '../../config/index');
 /**
  * Login middleware
  */
@@ -19,13 +20,28 @@ const login = (req, res, next) => {
             .then ( (result) => {
                 if (result) {
                     //create a new token:
+                    const newToken = JWT.sign ({
+                        id: user._id,
+                        email: user.email,
+                        date_joined: user.date
+                    },
+                    config.TOKEN_SECRET,
+                    {
+                        algorithm: 'HS256',
+                        expiresIn: '3600s'
+                    });
                     res
                     .status (201)
+                    .header ({
+                        'Content-Type': 'application/json',
+                        'auth-token': 'Bearer ' +newToken,
+                    })
                     .json ({
                         id: user._id,
                         email: user.email,
                         username: user.username,
-                        date_joined: user.date
+                        date_joined: user.date,
+                        token: newToken,
                     });
                 }else {
                     res
@@ -58,13 +74,29 @@ const login = (req, res, next) => {
             bcrypt.compare (password, user.password)
             .then ( (result) => {
                 if (result) {
+                     //create a new token:
+                     const newToken = JWT.sign ({
+                        id: user._id,
+                        email: user.email,
+                        date_joined: user.date
+                    },
+                    config.TOKEN_SECRET,
+                    {
+                        algorithm: 'HS256',
+                        expiresIn: '3600s'
+                    });
                     res
                     .status (201)
+                    .header ({
+                        'Content-Type': 'application/json',
+                        'auth-token': 'Bearer ' +newToken,
+                    })
                     .json ({
                         id: user._id,
                         email: user.email,
                         username: user.username,
-                        date_joined: user.date
+                        date_joined: user.date,
+                        token: newToken,
                     });
                 }else {
                     res
