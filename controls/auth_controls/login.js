@@ -2,6 +2,7 @@
  * Application module dependencies
  */
 const bcrypt = require ( 'bcrypt' );
+const jwt = require ( 'jsonwebtoken');
 /**
  * Module internal dependencies
  */
@@ -17,6 +18,7 @@ const login = (req, res, next) => {
             bcrypt.compare (password, user.password)
             .then ( (result) => {
                 if (result) {
+                    //create a new token:
                     res
                     .status (201)
                     .json ({

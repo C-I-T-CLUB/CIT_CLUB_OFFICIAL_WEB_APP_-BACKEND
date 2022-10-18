@@ -26,7 +26,7 @@ const validate = (req, res, next) => {
    .isUppercase ().toLowerCase ()
    .withMessage ('Invalid first name provided ');
 
-   body (`${req.body.lname}`)
+   body (`lname`)
    .isAlpha ()
    .trim ()
    .isEmpty ()
