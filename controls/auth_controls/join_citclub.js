@@ -10,6 +10,15 @@ const { CitclubMember: Member } = require ( '../../database/index');
 
 // Join CIT CLUB FUNCTION
 const joinCitClub = (req, res) => {
+    const errors = validationResult (req);
+    if ( !errors.isEmpty ()){
+        res
+        .status (400)
+        .json ( {
+            error: errors.array (),
+        })
+        return;
+    }
     //console.log (validationResult (req).error.msg)
     //Validation user input
     const {email,
