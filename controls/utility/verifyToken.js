@@ -18,8 +18,21 @@ const verify = (req, res, next) => {
             message: 'Access Denied!',
         })
     };
-    console.log ( token );
-    next (token);
+    try {
+        const authToken = token.slice (7, token.length);
+        const verified = JWT.verify (authToken, config.TOKEN_SECRET, {
+            algorithms: ['HS256'],
+        });
+        req.user = verified;
+        next ();
+    } catch (error) {
+        res
+        .status (401)
+        .json ( {
+            message: 'Invalid token',
+
+        });
+    }
 };
 
 //Export verify function
