@@ -8,6 +8,7 @@ const JWT = require ( 'jsonwebtoken');
  */
 const { CitclubMember, CitclubAccount} = require ( '../../database/index');
 const config = require ( '../../config/index');
+const token = require ( '../utility/generateToken');
 /**
  * Login middleware
  */
@@ -20,16 +21,7 @@ const login = (req, res, next) => {
             .then ( (result) => {
                 if (result) {
                     //create a new token:
-                    const newToken = JWT.sign ({
-                        id: user._id,
-                        email: user.email,
-                        date_joined: user.date
-                    },
-                    config.TOKEN_SECRET,
-                    {
-                        algorithm: 'HS256',
-                        expiresIn: '3600s'
-                    });
+                    const newToken = token (user);
                     res
                     .status (201)
                     .header ({
@@ -74,17 +66,7 @@ const login = (req, res, next) => {
             bcrypt.compare (password, user.password)
             .then ( (result) => {
                 if (result) {
-                     //create a new token:
-                     const newToken = JWT.sign ({
-                        id: user._id,
-                        email: user.email,
-                        date_joined: user.date
-                    },
-                    config.TOKEN_SECRET,
-                    {
-                        algorithm: 'HS256',
-                        expiresIn: '3600s'
-                    });
+                    const newToken = token (user);
                     res
                     .status (201)
                     .header ({
