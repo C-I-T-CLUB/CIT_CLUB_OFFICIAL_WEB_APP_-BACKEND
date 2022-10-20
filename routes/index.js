@@ -13,7 +13,7 @@ const {verifyToken} = require ( './util/util');
 const { fieldsOfInterest } = require ( './serves/serves');
 
 /**
- * Routes 
+ * Routes
  */
 Router.post ( '/auth/signup', signup );
 Router.post ( '/auth/login', login );
