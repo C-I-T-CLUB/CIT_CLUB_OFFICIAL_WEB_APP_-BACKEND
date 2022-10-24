@@ -1,3 +1,4 @@
+const jwt_decode = require ( 'jwt-decode' );
 
 const config = require('../../config/index')
 
@@ -18,6 +19,11 @@ const mongoClient = new MongoClient(url);
 
 // send file to the db
 const uploadFiles = async (req, res) => {
+  const token = req.header ('auth-token').slice ( 7, req.header ('auth-token').length);
+  const userDetails = jwt_decode (token)
+  let userEmail = userDetails.email;
+  let userId = userDetails.id
+  console.log(userDetails)
   try {
     await upload(req, res);
 
