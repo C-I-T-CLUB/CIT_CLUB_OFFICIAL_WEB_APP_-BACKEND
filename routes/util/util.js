@@ -5,13 +5,15 @@
 /**
  * Internal module dependencies
  */
- const validator = require ( '../../controls/utility/validator');
-const verify = require ( '../../controls/utility/verifyToken');
+const validator = require("../../controls/utility/validator");
+const developerValidator = require("../../controls/utility/developer");
+const verify = require("../../controls/utility/verifyToken");
 
 //utility object:
 const utils = {
-    validator: validator,
-    verifyToken: verify,
+  verifyToken: verify,
+  developerValidator,
+  validator,
 };
 
 //Exportin utility object:
