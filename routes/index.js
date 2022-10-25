@@ -9,7 +9,7 @@ const Router = express.Router();
  * Internal module dependencies
  */
 const {signup, login, join_citclub} = require ( './auth/auth');
-const {dashboard} = require ( './pages/pages');
+const {dashboard, getEvents} = require ( './pages/pages');
 const {verifyToken} = require ( './util/util');
 const { fieldsOfInterest } = require ( './serves/serves');
 
@@ -21,6 +21,7 @@ Router.post ( '/auth/login', login );
 Router.post ( '/auth/member', join_citclub);
 Router.get ( '/pages/dashboard', verifyToken, dashboard );
 Router.get ( '/helpers/interest', fieldsOfInterest);
+Router.get ( '/pages/events/view', getEvents);
 /**
  * Export routes
  */
