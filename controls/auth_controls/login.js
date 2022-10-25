@@ -44,7 +44,7 @@ const login = (req, res, next) => {
                 res
                 .status (500)
                 .json ({
-                    error: err.message 
+                    error: err.message
                 });
             });
         })
@@ -81,7 +81,7 @@ const login = (req, res, next) => {
                              res
                              .status (500)
                              .json ({
-                                 error: err.message 
+                                 error: err.message
                              });
                          });
                      })
@@ -119,7 +119,7 @@ const login = (req, res, next) => {
                                 res
                                 .status (500)
                                 .json ({
-                                    error: err.message 
+                                    error: err.message
                                 });
                             });
                         })

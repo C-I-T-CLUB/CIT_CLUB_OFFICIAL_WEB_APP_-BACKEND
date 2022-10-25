@@ -13,6 +13,10 @@ const cors = require ( 'cors');
 const apiRoutes = require ( './routes/index');
 const config = require ( './config/index');
 const dbconnection = require ( './helpers/dbconnection');
+
+
+
+
 /**
  * Application instance
  */
@@ -22,6 +26,7 @@ const app = express();
 /**
  * Application configuration
  */
+
 app.use ( express.json ());
 app.use ( express.urlencoded ( {extended: true} ));
 app.use ( helmet ());
@@ -34,7 +39,6 @@ app.use ( cors ())
  * Application middlewares
  */
 app.use ('/api', apiRoutes)
-
 
 
 /**

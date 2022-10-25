@@ -22,14 +22,31 @@ const {
   addDev,
 } = require("../controls/pages/findDeveloper");
 
+
+
+const  uploadController  = require ( './resources/resources');
+
 /**
  * Routes
  */
-Router.post("/auth/signup", signup);
-Router.post("/auth/login", login);
-Router.post("/auth/member", join_citclub);
-Router.get("/pages/dashboard", verifyToken, dashboard);
-Router.get("/helpers/interest", fieldsOfInterest);
+Router.post ( '/auth/signup', signup );
+Router.post ( '/auth/login', login );
+Router.post ( '/auth/member', join_citclub);
+Router.get ( '/pages/dashboard', verifyToken, dashboard );
+Router.get ( '/helpers/interest', fieldsOfInterest);
+
+
+
+
+
+// ROUTES FRO RESOURCES;
+
+Router.post("/upload", verifyToken, uploadController.uploadFiles);
+Router.get("/files", uploadController.getAllFiles);
+Router.get("/files/:name", uploadController.downloadFile);
+
+
+
 
 // all about the developer
 Router.get("/developer/", verifyToken, findDev);
