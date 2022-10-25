@@ -26,6 +26,10 @@ const {
 
 const  uploadController  = require ( './resources/resources');
 
+
+
+const  uploadController  = require ( './resources/resources');
+
 /**
  * Routes
  */

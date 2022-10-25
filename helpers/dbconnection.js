@@ -23,7 +23,7 @@
  .catch ( (err) => {
      console.log ( err.message );
  });
- 
+
  mongoose.connection.on ( 'connected', () => {
         console.log ( 'Mongoose connected to the database');
  });
@@ -40,7 +40,7 @@
         mongoose.connection.close ( () => {
             console.log ( 'Mongoose disconnected from the database due to application termination');
             process.exit (0);
-        }); 
+        });
  } );
  /**
   * Exporting database connection

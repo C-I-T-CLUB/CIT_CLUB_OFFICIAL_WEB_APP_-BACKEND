@@ -6,7 +6,11 @@ const upload = require("../../middleware/upload");
 const MongoClient = require("mongodb").MongoClient;
 const GridFSBucket = require("mongodb").GridFSBucket;
 
+<<<<<<< HEAD
 const baseUrl = `http://localhost:${config.PORT}/files/`;
+=======
+const baseUrl = `http://localhost:${config.PORT}/api/files/`;
+>>>>>>> master
 const url = config.DB_URI;
 console.log("Multer DB URL is  ", url)
 
@@ -14,6 +18,12 @@ console.log("Multer DB URL is  ", url)
 
 const mongoClient = new MongoClient(url);
 
+<<<<<<< HEAD
+=======
+
+
+// send file to the db
+>>>>>>> master
 const uploadFiles = async (req, res) => {
   try {
     await upload(req, res);
@@ -26,6 +36,10 @@ const uploadFiles = async (req, res) => {
 
     return res.send({
       message: "File has been uploaded.",
+<<<<<<< HEAD
+=======
+      status:"OK",
+>>>>>>> master
     });
   } catch (error) {
     console.log(error);
@@ -37,7 +51,13 @@ const uploadFiles = async (req, res) => {
   }
 };
 
+<<<<<<< HEAD
 const getListFiles = async (req, res) => {
+=======
+
+// get all files
+const getAllFiles = async (req, res) => {
+>>>>>>> master
   try {
     await mongoClient.connect();
 
@@ -68,7 +88,11 @@ const getListFiles = async (req, res) => {
   }
 };
 
+<<<<<<< HEAD
 const download = async (req, res) => {
+=======
+const downloadFile = async (req, res) => {
+>>>>>>> master
   try {
     await mongoClient.connect();
 
@@ -100,6 +124,11 @@ const download = async (req, res) => {
 
 module.exports = {
   uploadFiles,
+<<<<<<< HEAD
   getListFiles,
   download,
+=======
+  getAllFiles,
+  downloadFile,
+>>>>>>> master
 };
