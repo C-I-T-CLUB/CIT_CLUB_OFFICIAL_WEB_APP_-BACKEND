@@ -1,22 +1,21 @@
-const jwt_decode = require ( 'jwt-decode' );
 const fs = require("fs");
+const path = require("path");
+
+//Inter modules:
 const uploadedFile = require("../../middleware/upload");
 // const {ResourcesModel} = require("../../database/index");
 const ResourcesModel = require("../../database/schemas/resource");
+const config = require ('../../config/index');
 
 
-const uploadDir = "./static/assets/uploads";
-const baseUrl = "http://localhost:3000/api/files/view";
-
-
+const uploadDir = path.join ( __dirname, "../", "../", "static/", "assets/", "uploads");
+const baseUrl = `${config.HOST}:${config.PORT}/api/files/view`;
 
 
 // upload a file to the db and dismk
 const postNewFile = async (req, res) => {
-  const token = req.header ('auth-token').slice ( 7, req.header ('auth-token').length);
-  const userDetails = jwt_decode (token)
-  let userEmail = userDetails.email
-  console.log("userEmail ", userEmail)
+  const userDetails = req.user;
+  let userEmail = userDetails.email;
   try {
     await uploadedFile(req, res);
 
@@ -37,7 +36,7 @@ const postNewFile = async (req, res) => {
       })
 
       ResourcesObj.save()
-      console.log("Updated Resources models")
+      //console.log("Updated Resources models")
 
       res.status(200).send({
         message: "File Uploaded the file successfully: " + req.file.originalname,
@@ -46,9 +45,6 @@ const postNewFile = async (req, res) => {
 
     }
     else{
-      console.log(
-        req.body.description, req.body.unit, req.body.course
-      )
       res.status(500).send({
         message: "Please Ensure all fields Are present ",
         "desc":"have these fields",
@@ -58,7 +54,7 @@ const postNewFile = async (req, res) => {
 
   } catch (err) {
     res.status(500).send({
-      message: `An Error Occured during uploafing:  ${err}`,
+      message: err.message,
     });
   }
 };
@@ -68,11 +64,10 @@ const postNewFile = async (req, res) => {
 const viewAllFilesInformation = (req, res) =>{
   // get the folder where the files are stored.
   let BASE_DIR = uploadDir;
-
   fs.readdir(BASE_DIR, function(err, files_res){
     if (err) {
-      req.status(500).send({
-        message:"Unable to retrieve Some files from the storeage!",
+      res.status(500).send({
+        message: "Unable to retrieve Some files from the storeage!",
         status: "500",
         data : [],
       });
@@ -137,7 +132,7 @@ const ViewFileInformation = (req, res) => {
   })
 
   .catch((err)=> res.status(500).send({
-    message: "error Occured  "+ err,
+    message: err.message,
     status: "500",
     data: "No data because of the error",
   }))
@@ -153,7 +148,7 @@ const downLoadFileInfo  = (req, res) => {
   res.download(directoryPath + "/"+ fileName, fileName, (err) => {
     if (err) {
       res.status(500).send({
-        message: "Unabel to download the file you requestd. " + err,
+        message: err.message,
         status:"500"
       });
     }
