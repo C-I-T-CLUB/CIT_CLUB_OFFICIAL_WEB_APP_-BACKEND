@@ -10,18 +10,20 @@ const config = require ( '../../config/index');
 
 //Verify function:
 const verify = (req, res, next) => {
-    const token = req.header ('auth-token');
+    const token = req.header ('Authorization');
     if (!token) {
-        res
-        .status (401)
-        .json ( {
-            message: 'Access Denied!',
-        })
+        return (
+            res
+            .status (401)
+            .json ( {
+                message: 'Access Denied!',
+            })
+        );
     };
     try {
         const authToken = token.slice (7, token.length);
         const verified = JWT.verify (authToken, config.TOKEN_SECRET, {
-            algorithms: ['HS256'],
+            algorithms: ['HS512'],
         });
         req.user = verified;
         next ();

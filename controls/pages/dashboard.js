@@ -1,7 +1,6 @@
 /**
  * Application module dependencies
  */
-const jwt_decode = require ( 'jwt-decode' );
 
 /**
  * Internal module dependencies
@@ -10,8 +9,7 @@ const jwt_decode = require ( 'jwt-decode' );
 
 //Dashboard module
 const dashboard = (req, res ) => {
-    const token = req.header ('auth-token').slice ( 7, req.header ('auth-token').length);
-    const userDetails = jwt_decode (token)
+    const userDetails = req.user
     CitclubMember.findOne (
         {_id: userDetails.id}
     )

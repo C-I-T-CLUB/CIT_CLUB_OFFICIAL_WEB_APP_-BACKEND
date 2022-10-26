@@ -23,7 +23,7 @@ const login = (req, res, next) => {
                     .status (201)
                     .header ({
                         'Content-Type': 'application/json',
-                        'auth-token': 'Bearer ' +newToken,
+                        'Authorization': 'Bearer ' +newToken,
                     })
                     .json ({
                         id: user._id,
@@ -60,7 +60,7 @@ const login = (req, res, next) => {
                                  .status (201)
                                  .header ({
                                      'Content-Type': 'application/json',
-                                     'auth-token': 'Bearer ' +newToken,
+                                     'Authorization': 'Bearer ' +newToken,
                                  })
                                  .json ({
                                      id: user._id,
@@ -97,7 +97,7 @@ const login = (req, res, next) => {
                                     .status (201)
                                     .header ({
                                         'Content-Type': 'application/json',
-                                        'auth-token': 'Bearer ' +newToken,
+                                        'Authorization': 'Bearer ' +newToken,
                                     })
                                     .json ({
                                         id: user._id,

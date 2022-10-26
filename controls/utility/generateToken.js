@@ -18,7 +18,7 @@ const tokenGenerator = (user) => {
     },
     config.TOKEN_SECRET,
     {
-        algorithm: 'HS256',
+        algorithm: 'HS512',
         expiresIn: '3600s'
     }
     )
