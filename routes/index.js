@@ -41,9 +41,10 @@ Router.get ( '/helpers/interest', fieldsOfInterest);
 
 // ROUTES FRO RESOURCES;
 
-Router.post("/upload", verifyToken, uploadController.uploadFiles);
-Router.get("/files", uploadController.getAllFiles);
-Router.get("/files/:name", verifyToken, uploadController.downloadFile);
+Router.post("/upload", verifyToken, uploadController.postNewFile);
+Router.get("/files", uploadController.viewAllFilesInformation);
+Router.get("/files/view/:name", uploadController.downLoadFileInfo);
+Router.get("/files/details/:name", uploadController.ViewFileInformation);
 
 
 

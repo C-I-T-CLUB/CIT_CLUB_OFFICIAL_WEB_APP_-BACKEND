@@ -35,7 +35,7 @@ const dashboard = (req, res ) => {
         .then ( (user) => {
             res
             .status (200)
-            .json ( { 
+            .json ( {
                 email: user.email,
                 username: user.username,
             } );
