@@ -43,7 +43,7 @@ Router.get ( '/helpers/interest', fieldsOfInterest);
 
 Router.post("/upload", verifyToken, uploadController.uploadFiles);
 Router.get("/files", uploadController.getAllFiles);
-Router.get("/files/:name", uploadController.downloadFile);
+Router.get("/files/:name", verifyToken, uploadController.downloadFile);
 
 
 

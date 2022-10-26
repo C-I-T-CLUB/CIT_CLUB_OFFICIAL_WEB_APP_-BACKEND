@@ -19,11 +19,7 @@ const mongoClient = new MongoClient(url);
 
 // send file to the db
 const uploadFiles = async (req, res) => {
-  const token = req.header ('auth-token').slice ( 7, req.header ('auth-token').length);
-  const userDetails = jwt_decode (token)
-  let userEmail = userDetails.email;
-  let userId = userDetails.id
-  console.log(userDetails)
+
   try {
     await upload(req, res);
 
@@ -53,7 +49,7 @@ const getAllFiles = async (req, res) => {
   try {
     await mongoClient.connect();
 
-    const database = mongoClient.db(config.DB_NAME);
+    const database = mongoClient.db(url);
     const images = database.collection("Resources.files");
     const cursor = images.find({});
 
@@ -84,7 +80,7 @@ const downloadFile = async (req, res) => {
   try {
     await mongoClient.connect();
 
-    const database = mongoClient.db(config.DB_NAME);
+    const database = mongoClient.db(url);
     const bucket = new GridFSBucket(database, {
       bucketName: config.RESOURCEBUCKET,
     });
