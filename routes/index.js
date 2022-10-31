@@ -99,11 +99,11 @@ Router.delete("/developer/remove", verifyToken, removeDev);
 /**
  * Blogs requests
  */
-Router.get("/blog/:page",getBlogs)
+Router.get("/blogs/:page",getBlogs)
 Router.get("/blog/:id",getBlog)
 Router.post("/blog",verifyToken,saveBlog)
 Router.post("/upvoteblog/:id",upVoteBlog)
-Router.post("/externalblogs",externalBlogs)
+Router.get("/externalblogs",externalBlogs)
 /**
  * Export routes
  */

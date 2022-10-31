@@ -25,7 +25,7 @@ const saveBlog = (request, response, next) => {
       });
     })
     .catch((err) => {
-      request.status(500).json({
+      response.status(500).json({
         error: err?.message ?? "Failed!. Please try again",
       });
     });
@@ -45,9 +45,11 @@ const getBlogs = async (request, respone) => {
 };
 
 const getBlog = async(request, response) => {
-    const id = request?.id
+    const id = request?.params?.id
+    console.log(request.params.id)
     if (id){
-        const blog = Blog.findById(id).exec();
+        const blog = await Blog.findById(id).exec()
+        console.log(blog)
         response.status(200).json({
             blog: blog
         })
@@ -79,7 +81,8 @@ const externalBlogs = (request,response) => {
       fetch("https://newsapi.org/v2/everything?apiKey=74f1ebd4692f4f3d8adb0e4674dd1ae7&q=programming", requestOptions)
         .then(resp => resp.json())
         .then(result => {
-            const data = result?.map(({author,title,description,urlToImage,content,publishedAt})=>({
+          console.log(result)
+            const data = result.articles.map(({author,title,description,urlToImage,content,publishedAt})=>({
                 title,
                 author,
                 content,
