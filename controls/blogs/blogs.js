@@ -3,7 +3,13 @@
  */
 
 const { BlogsModel: Blog } = require("../../database");
-
+/**
+ * 
+ * @param {*} request 
+ * @param {*} response 
+ * @param {*} next 
+ * Saves a blog to the database
+ */
 const saveBlog = (request, response, next) => {
   const { title, content, author, imageLink, tags, shortDescription } =
     request.body;
@@ -30,9 +36,14 @@ const saveBlog = (request, response, next) => {
       });
     });
 };
-
+/**
+ * 
+ * @param {*} request 
+ * @param {*} respone 
+ * Get all blogs in the dabase using pagination in pages of 20 documents per page
+ */
 const getBlogs = async (request, respone) => {
-  let page = request?.page;
+  let page = request?.params.page;
   if (page) {
     page = Number(page)*20
   }else{
@@ -43,13 +54,18 @@ const getBlogs = async (request, respone) => {
     blogs,
   });
 };
-
+/**
+ * 
+ * @param {*} request 
+ * @param {*} response 
+ * Get a single blog by the blog id
+ */
 const getBlog = async(request, response) => {
     const id = request?.params?.id
-    console.log(request.params.id)
+    
     if (id){
         const blog = await Blog.findById(id).exec()
-        console.log(blog)
+        
         response.status(200).json({
             blog: blog
         })
@@ -57,8 +73,11 @@ const getBlog = async(request, response) => {
         response.status(500).json({message: "Error Please Provide Blog Id"})
     }
 };
+/**
+ * Upvotes a single blog
+ */
 const upVoteBlog = (request, response) => {
-    const id = request?.id
+    const id = request.params?.id
     if (id){
         Blog.findOneAndUpdate({_id: id},{
             $inc: {
@@ -72,6 +91,12 @@ const upVoteBlog = (request, response) => {
         response.status(500).json({message: "Error Please Provide Blog Id"})
     }
 };
+/**
+ * 
+ * @param {*} request 
+ * @param {*} response 
+ * Fetches external blogs from news api
+ */
 const externalBlogs = (request,response) => {
     var requestOptions = {
         method: 'GET',
@@ -81,7 +106,6 @@ const externalBlogs = (request,response) => {
       fetch("https://newsapi.org/v2/everything?apiKey=74f1ebd4692f4f3d8adb0e4674dd1ae7&q=programming", requestOptions)
         .then(resp => resp.json())
         .then(result => {
-          console.log(result)
             const data = result.articles.map(({author,title,description,urlToImage,content,publishedAt})=>({
                 title,
                 author,
