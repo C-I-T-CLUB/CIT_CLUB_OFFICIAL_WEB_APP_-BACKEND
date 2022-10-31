@@ -14,7 +14,7 @@ const { signup, login, join_citclub } = require("./auth/auth");
 const { dashboard } = require("./pages/pages");
 const { verifyToken, developerValidator } = require("./util/util");
 const { fieldsOfInterest } = require("./serves/serves");
-
+const {getBlogs,saveBlog,getBlog, upVoteBlog} = require('./blogs/index')
 const {
   updateUser,
   removeDev,
@@ -25,6 +25,7 @@ const {
 
 
 const  uploadController  = require ( './resources/resources');
+const { externalBlogs } = require("../controls/blogs/blogs");
 
 /**
  * Routes
@@ -94,6 +95,15 @@ Router.post(
 );
 Router.post("/developer/update", verifyToken, updateUser);
 Router.delete("/developer/remove", verifyToken, removeDev);
+
+/**
+ * Blogs requests
+ */
+Router.get("/blogs/:page",getBlogs)
+Router.get("/blog/:id",getBlog)
+Router.post("/blog",verifyToken,saveBlog)
+Router.post("/upvoteblog/:id",upVoteBlog)
+Router.get("/externalblogs",externalBlogs)
 /**
  * Export routes
  */
